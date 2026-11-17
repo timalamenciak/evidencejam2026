@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evidence Jam 2026: Causapalooza! — AI Causal Synthesis Hackathon · Waterloo</title>
-<meta name="description" content="A weekend hackathon at the University of Waterloo where teams use AI to synthesize causal ecological knowledge. One challenge, three lanes, one shared rubric.">
+<title>Evidence Jam 2026: Causapalooza! — Results, teams and photos · Waterloo</title>
+<meta name="description" content="Results from Evidence Jam 2026: Causapalooza!, a hackathon at St. Jerome's University in Waterloo where 36 participants in 9 teams used LLMs to synthesize evidence for biodiversity conservation and restoration.">
+<meta property="og:title" content="Evidence Jam 2026: Causapalooza! — Results">
+<meta property="og:description" content="36 participants, 9 teams, 3 lanes: see the winners, every team's code, and photos from the weekend.">
+<meta property="og:image" content="https://evidencejam.tim-a.ca/assets/gallery/trophies.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -56,16 +59,15 @@
   h3{font-size:1.3rem;font-weight:600;}
   p{margin:0 0 1.1em;}
   .measure{max-width:var(--measure);}
-  section{padding:5.5rem 1.5rem;}
+  section{padding:5.5rem 1.5rem;scroll-margin-top:3.5rem;}
   .wrap{max-width:68rem;margin:0 auto;}
   .dark{background:var(--ink);color:var(--paper-text);}
   .dark h1,.dark h2,.dark h3{color:var(--paper-text);}
   .alt{background:var(--paper-2);}
-  .eyebrow-plain{
-    font-size:0.95rem;
-    color:inherit;
-    opacity:0.75;
-    margin:0 0 1rem;
+  .eyebrow{
+    font-size:0.8rem;font-weight:600;
+    letter-spacing:0.09em;text-transform:uppercase;
+    opacity:0.7;margin:0 0 0.8rem;
   }
   .btn{
     display:inline-block;
@@ -109,17 +111,165 @@
   }
   .hero-grid{
     max-width:68rem;margin:0 auto;
-    display:grid;grid-template-columns:1.15fr 0.85fr;gap:3rem;align-items:center;
+    display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;
   }
   .hero-facts{font-size:1rem;opacity:0.85;margin-bottom:1.6rem;}
   .hero p.lede{font-size:1.2rem;max-width:34rem;opacity:0.92;}
   .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem;}
-  /* ---------- Hero causal graph ---------- */
+  .hero-photo{margin:0;}
+  .hero-photo img{border-radius:6px;width:100%;height:auto;}
+  .hero-photo figcaption{font-size:0.85rem;opacity:0.75;margin-top:0.7rem;}
+  .pill{
+    display:inline-block;
+    font-size:0.9rem;font-weight:600;
+    color:var(--gold);
+    border:1px solid var(--line-dark);
+    border-radius:999px;padding:0.35em 0.9em;
+    margin-bottom:1.2rem;
+  }
+
+  /* ---------- Recap ---------- */
+  .recap-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:3.5rem;align-items:start;}
+  .stats{
+    list-style:none;margin:0;padding:0;
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  }
+  .stats li{background:var(--paper);padding:1.2rem 1.3rem;}
+  .stat-num{
+    display:block;font-family:var(--font-serif);
+    font-size:2.4rem;font-weight:500;line-height:1;color:var(--ink);
+  }
+  .stat-label{display:block;font-size:0.88rem;margin-top:0.4rem;opacity:0.85;line-height:1.35;}
+
+  /* ---------- Videos ---------- */
+  .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem;}
+  .video{margin:0;}
+  .video-frame{position:relative;padding-bottom:56.25%;border-radius:6px;overflow:hidden;background:var(--ink-2);}
+  .video-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+  .video figcaption{font-size:0.95rem;margin-top:0.7rem;opacity:0.85;}
+
+  /* ---------- Teams ---------- */
+  .lane-group{margin-top:2.8rem;}
+  .lane-group:first-of-type{margin-top:2rem;}
+  .lane-group-head{display:flex;align-items:baseline;gap:0.8rem;flex-wrap:wrap;margin-bottom:1.1rem;}
+  .lane-group-head h3{margin:0;}
+  .lane-tag{
+    font-size:0.85rem;font-weight:600;
+    color:var(--lane-text, var(--lane-color, var(--ink)));
+    text-transform:uppercase;letter-spacing:0.06em;
+    margin:0;
+  }
+  .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:1.2rem;}
+  .team-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:5px solid var(--lane-color, var(--ink));
+    border-radius:4px;
+    padding:1.3rem 1.4rem;
+    display:flex;flex-direction:column;
+  }
+  .team-card h4{font-family:var(--font-serif);font-size:1.35rem;font-weight:600;margin:0 0 0.5rem;line-height:1.2;}
+  .team-members{font-size:0.93rem;margin:0 0 1rem;}
+  .badges{display:flex;flex-wrap:wrap;gap:0.4rem;margin:0 0 0.8rem;padding:0;list-style:none;}
+  .badge{
+    font-size:0.76rem;font-weight:600;
+    padding:0.22em 0.65em;border-radius:999px;
+    background:rgba(39,55,50,0.08);color:var(--ink);
+    border:1px solid var(--line);
+  }
+  .badge.gold{background:var(--gold);border-color:var(--gold);color:#3b3210;}
+  .badge.silver{background:#cfd3d1;border-color:#b9bfbc;color:#2c3330;}
+  .badge.best{background:var(--ink);border-color:var(--ink);color:var(--paper-text);}
+  .badge.green{background:var(--sage);border-color:var(--sage);color:var(--sage-ink);}
+  .member-award{
+    display:inline-block;font-size:0.74rem;font-weight:600;
+    padding:0.05em 0.55em;border-radius:999px;
+    background:var(--sky);color:#1f3a40;vertical-align:0.1em;
+  }
+  .team-links{margin-top:auto;display:flex;flex-wrap:wrap;gap:0.5rem 1.1rem;font-size:0.92rem;font-weight:600;}
+  .team-links a{text-decoration:none;border-bottom:1px solid var(--line);color:var(--ink);}
+  .team-links a:hover{border-bottom-color:var(--ink);}
+  .team-links a::after{content:" \2197";font-weight:400;opacity:0.6;}
+
+  /* ---------- Gallery ---------- */
+  .gallery{
+    list-style:none;margin:2rem 0 0;padding:0;
+    display:grid;grid-template-columns:repeat(3,1fr);
+    grid-auto-rows:13rem;grid-auto-flow:dense;gap:0.75rem;
+  }
+  .gallery li{margin:0;}
+  .gallery li.tall{grid-row:span 2;}
+  .gallery li.pano{grid-column:span 2;}
+  .gallery button{
+    all:unset;cursor:zoom-in;
+    display:block;width:100%;height:100%;
+    border-radius:5px;overflow:hidden;position:relative;
+    background:var(--paper-2);
+  }
+  .gallery button:focus-visible{outline:3px solid var(--terracotta);outline-offset:3px;}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:transform 0.35s ease;}
+  .gallery button:hover img{transform:scale(1.03);}
+  .gallery .cap{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:1.6rem 0.9rem 0.65rem;
+    font-size:0.84rem;line-height:1.35;color:#fff;
+    background:linear-gradient(to top,rgba(20,28,25,0.82),rgba(20,28,25,0));
+  }
+
+  /* Lightbox */
+  dialog.lightbox{
+    border:none;padding:0;background:transparent;color:var(--paper-text);
+    width:min(94vw,1200px);max-width:none;max-height:none;
+    overflow:visible;
+  }
+  dialog.lightbox::backdrop{background:rgba(16,22,20,0.92);}
+  .lb-figure{margin:0;display:flex;flex-direction:column;align-items:center;}
+  .lb-figure img{max-width:100%;max-height:80vh;width:auto;height:auto;border-radius:4px;}
+  .lb-figure figcaption{margin-top:0.8rem;font-size:0.95rem;text-align:center;opacity:0.9;}
+  .lb-count{opacity:0.6;margin-left:0.5rem;}
+  .lb-btn{
+    position:fixed;top:50%;transform:translateY(-50%);
+    background:rgba(233,227,220,0.12);color:var(--paper-text);
+    border:1px solid var(--line-dark);border-radius:999px;
+    width:3rem;height:3rem;font-size:1.4rem;line-height:1;cursor:pointer;
+    font-family:var(--font-sans);
+  }
+  .lb-btn:hover{background:rgba(233,227,220,0.24);}
+  .lb-btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+  .lb-prev{left:1rem;}
+  .lb-next{right:1rem;}
+  .lb-close{top:1rem;right:1rem;transform:none;}
+
+  /* ---------- Thanks ---------- */
+  .thanks-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:start;}
+  .thanks-grid h3{font-size:1.1rem;margin-top:1.6rem;}
+  .thanks-grid h3:first-child{margin-top:0;}
+  .thanks-grid p{opacity:0.9;}
+  .supporters{
+    display:flex;flex-wrap:wrap;align-items:center;
+    gap:2.5rem 4rem;margin-top:2.8rem;padding-top:2.2rem;
+    border-top:1px solid var(--line-dark);
+  }
+  .supporters a{display:block;opacity:0.9;transition:opacity 0.15s ease;}
+  .supporters a:hover{opacity:1;}
+  .supporters img{height:38px;width:auto;}
+  .supporters img.logo-dell{height:54px;}
+  .supporters img.logo-sju{height:46px;}
+
+  /* ---------- Archive divider ---------- */
+  .archive-intro{padding:3.5rem 1.5rem 0;}
+  .archive-intro p{max-width:var(--measure);opacity:0.85;margin:0;}
+
+  /* ---------- Hero causal graph (now in CAMO section) ---------- */
   .cg-card{
     background:var(--ink-2);
+    color:var(--paper-text);
     border:1px solid var(--line-dark);
     border-radius:6px;
     padding:1.5rem;
+    margin:0;
   }
   .cg-title{
     font-size:0.75rem;letter-spacing:0.09em;text-transform:uppercase;
@@ -166,10 +316,6 @@
   }
   .cg-caption{font-size:0.81rem;opacity:0.7;margin:0.95rem 0 0;line-height:1.55;}
 
-  /* ---------- About ---------- */
-  .about-lists{
-    display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem;
-  }
   ul.plain{margin:0;padding:0;list-style:none;}
   ul.plain li{
     padding:0.55em 0;
@@ -196,12 +342,7 @@
     border-radius:4px;
     padding:1.6rem;
   }
-  .lane-tag{
-    font-size:0.85rem;font-weight:600;
-    color:var(--lane-text, var(--lane-color, var(--ink)));
-    text-transform:uppercase;letter-spacing:0.06em;
-    margin-bottom:0.5rem;
-  }
+  .lane-card .lane-tag{margin-bottom:0.5rem;}
   .lane-card dl{font-size:0.92rem;margin:1rem 0 0;}
   .lane-card dt{font-weight:600;margin-top:0.7rem;}
   .lane-card dd{margin:0.2rem 0 0;opacity:0.9;}
@@ -219,69 +360,7 @@
   }
 
   /* ---------- CAMO ---------- */
-  .camo-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:start;}
-  .camo-box{
-    background:var(--paper-2);
-    border:1px solid var(--line);
-    border-radius:6px;
-    padding:1.4rem 1.6rem;
-    font-size:0.94rem;
-  }
-  .camo-box h3{font-size:1rem;margin-bottom:0.6rem;}
-
-  /* ---------- Awards ---------- */
-  .award-row{
-    display:grid;grid-template-columns:auto 1fr;gap:1.4rem;
-    padding:1.8rem 0;
-    border-bottom:1px solid var(--line-dark);
-  }
-  .award-row:last-child{border-bottom:none;}
-  .award-icon{font-size:1.9rem;line-height:1;}
-  .prize-list{
-    list-style:none;margin:1.4rem 0 0;padding:0;
-    display:grid;gap:0.9rem;
-  }
-  .prize-list li{
-    display:grid;grid-template-columns:3.2rem 1fr;
-    align-items:baseline;gap:1rem;
-  }
-  .prize-rank{
-    font-family:var(--font-sans);
-    font-size:1.9rem;font-weight:700;line-height:1;
-    color:var(--coral);
-    text-align:right;
-  }
-  .prize-rank sup{font-size:0.5em;font-weight:700;}
-  .prize-name{display:block;font-weight:600;font-size:1.05rem;}
-  .prize-spec{display:block;font-size:0.9rem;opacity:0.8;}
-  .prize-list a{text-decoration:none;border-bottom:1px solid rgba(233,227,220,0.35);}
-  .prize-list a:hover{border-bottom-color:var(--coral);}
-
-  /* ---------- Supported by ---------- */
-  .supporters{
-    display:flex;flex-wrap:wrap;align-items:center;
-    gap:2.5rem 4rem;margin-top:2.2rem;
-  }
-  .supporters a{
-    display:block;
-    opacity:0.9;transition:opacity 0.15s ease;
-  }
-  .supporters a:hover{opacity:1;}
-  .supporters img{height:38px;width:auto;}
-  .supporters img.logo-dell{height:54px;}
-  .supporters img.logo-sju{height:46px;}
-
-  /* ---------- Button pair ---------- */
-  .btn-pair{display:flex;gap:0.9rem;flex-wrap:wrap;}
-  .deadline{
-    display:inline-block;
-    font-size:0.9rem;font-weight:600;
-    color:var(--gold);
-    border:1px solid var(--line-dark);
-    border-radius:999px;padding:0.35em 0.9em;
-    margin-bottom:1.2rem;
-  }
-  .award-meta{font-size:0.88rem;color:var(--coral);margin-bottom:0.3rem;}
+  .camo-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:start;}
 
   /* ---------- Schedule ---------- */
   .timeline{border-left:2px solid var(--line);padding-left:1.6rem;}
@@ -297,15 +376,6 @@
   /* ---------- Space ---------- */
   .space-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;}
   .space-photo{border-radius:6px;overflow:hidden;}
-
-  /* ---------- Apply ---------- */
-  .apply-box{
-    background:var(--ink);color:var(--paper-text);
-    border-radius:8px;
-    padding:3rem;
-    text-align:left;
-  }
-  .apply-box h2{color:var(--paper-text);}
 
   /* ---------- Footer ---------- */
   footer{background:var(--ink);color:var(--paper-text);padding:3.5rem 1.5rem 2.5rem;}
@@ -326,16 +396,31 @@
   /* ---------- Responsive ---------- */
   @media (max-width:900px){
     .hero-grid{grid-template-columns:1fr;}
+    .recap-grid{grid-template-columns:1fr;gap:2.2rem;}
+    .video-grid{grid-template-columns:1fr;}
+    .gallery li.pano{grid-column:auto;}
     .lanes-grid{grid-template-columns:1fr;}
-    .about-lists{grid-template-columns:1fr;}
     .camo-grid{grid-template-columns:1fr;}
     .space-grid{grid-template-columns:1fr;}
+    .thanks-grid{grid-template-columns:1fr;gap:1.5rem;}
     .footer-grid{grid-template-columns:1fr;gap:2rem;}
-    section{padding:3.5rem 1.25rem;}
+    .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:10rem;}
+    section{padding:3.5rem 1rem;}
+    .archive-intro{padding:3rem 1rem 0;}
+    .nav-inner{padding:0.8rem 1rem;}
+  }
+  @media (max-width:560px){
+    .gallery{grid-auto-rows:8rem;gap:0.5rem;}
+    .gallery .cap{display:none;}
+    header.site-nav{position:static;}
+    section{scroll-margin-top:0;}
+    nav.links{gap:0.4rem 1rem;font-size:0.9rem;}
+    .lb-btn{top:auto;bottom:1rem;transform:none;}
+    .lb-close{top:1rem;bottom:auto;}
   }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
-    .btn{transition:none;}
+    .btn,.gallery img{transition:none;}
   }
 </style>
 </head>
@@ -345,15 +430,14 @@
   <div class="nav-inner">
     <a class="wordmark" href="#top">Evidence Jam <em>Causapalooza</em></a>
     <nav class="links">
-      <a href="#about">About</a>
-      <a href="#lanes">Lanes</a>
-      <a href="#camo">CAMO</a>
-      <a href="#awards">Awards and prizes</a>
+      <a href="#teams">Teams &amp; awards</a>
+      <a href="#videos">Videos</a>
+      <a href="#gallery">Photos</a>
+      <a href="#thanks">Thanks</a>
+      <a href="#lanes">The challenge</a>
       <a href="#schedule">Schedule</a>
-      <a href="#space">The space</a>
-      <a href="#supported">Supported by</a>
     </nav>
-    <a class="btn btn-primary nav-cta" href="#schedule">See the schedule</a>
+    <a class="btn btn-primary nav-cta" href="#videos">Watch the presentations</a>
   </div>
 </header>
 
@@ -365,14 +449,300 @@
       <div>
         <p class="hero-facts">St. Jerome's University, Waterloo · November 13–16, 2026</p>
         <h1>Evidence Jam 2026<br>Causapalooza!</h1>
-        <p class="lede">A weekend hackathon using AI to turn ecological literature into structured causal knowledge — one challenge, three lanes, one shared scoreboard.</p>
-        <p class="deadline">Applications are now closed</p>
+        <p class="lede">36 participants in 9 teams spent a weekend producing evidence synthesis tools for biodiversity conservation and restoration. Here's what they built.</p>
+        <p class="pill">The results are in</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="#about">See how it works</a>
+          <a class="btn btn-primary" href="#teams">See the teams and awards</a>
+          <a class="btn btn-ghost" href="#videos">Watch the videos</a>
         </div>
       </div>
-      <div>
-        <figure class="cg-card" style="margin:0;">
+      <figure class="hero-photo">
+        <img src="assets/gallery/trophies.jpg" width="1280" height="934" alt="Five low-poly trophies on wooden bases: two green geese and gold, red and grey raccoons.">
+        <figcaption>The Evidence Jam 2026 trophies, waiting for their winners.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ RECAP ============ -->
+  <section id="recap">
+    <div class="wrap">
+      <div class="recap-grid">
+        <div>
+          <p class="eyebrow">What happened</p>
+          <h2>A weekend spent untangling siloed, fragmented evidence</h2>
+          <p class="measure">Evidence Jam 2026: Causapalooza! was a hackathon on synthesizing evidence for biodiversity conservation and restoration. We accepted 36 participants across 9 teams to prototype solutions to a common problem in environmental management: evidence that is siloed and fragmented.</p>
+          <p class="measure">The event kicked off Friday with a tour of UW's <a href="https://uwaterloo.ca/research/meet-nibi">Nibi supercomputer</a>, after which teams received their challenges. Every challenge used LLMs to synthesize ecological evidence and fell into one of <a href="#lanes">three lanes</a>. In Lane&nbsp;1, teams designed pipelines that annotate journal articles using a structured causal knowledge graph schema. In Lane&nbsp;2, they built reasoning agents that work with that knowledge graph. In Lane&nbsp;3, they built websites that answer key ecological questions.</p>
+          <p class="measure">Teams received API keys for Brine, SHARCNET's pilot inference-as-a-service, and used a small model hosted on sustainable and sovereign Canadian hardware (Qwen3.8-27B) for their annotation and reasoning pipelines. Over the weekend, mentors from UW's School of Environment, Resources and Sustainability and from the World Wildlife Fund, Conservation Halton, NVIDIA, Dougan Consulting and Aicology guided the teams. Solutions were due Sunday, November&nbsp;15 at 6&nbsp;p.m.</p>
+          <p class="measure">All solutions will be shared openly in a forthcoming workshop report in <em>Research Ideas &amp; Outcomes</em>.</p>
+        </div>
+        <ul class="stats" aria-label="Evidence Jam 2026 in numbers">
+          <li><span class="stat-num">79</span><span class="stat-label">applicants, from 19 teams and 25 individuals</span></li>
+          <li><span class="stat-num">36</span><span class="stat-label">participants accepted</span></li>
+          <li><span class="stat-num">66</span><span class="stat-label">applicants were current UW students</span></li>
+          <li><span class="stat-num">9</span><span class="stat-label">teams across 3 lanes</span></li>
+          <li><span class="stat-num">6</span><span class="stat-label">mentoring organizations</span></li>
+          <li><span class="stat-num">$10k+</span><span class="stat-label">in prizes from Dell</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEAMS & AWARDS ============ -->
+  <section id="teams" class="alt">
+    <div class="wrap">
+      <p class="eyebrow">Teams and awards</p>
+      <h2>Nine teams, all open source</h2>
+      <p class="measure">Every lane was judged on the same rubric. Each lane had a best-in-lane winner and a sustainability prize for the effective solution with the lowest carbon footprint, and the judges also named an overall first place and runner-up. One participant was drawn at random to win a Dell GB10 desktop supercomputer.</p>
+      <p class="measure">Every team's code is public on GitHub. Lane 3 teams built websites, which are linked below.</p>
+
+      <div class="lane-group">
+        <div class="lane-group-head" style="--lane-color:var(--terracotta);--lane-text:var(--terracotta-ink);">
+          <p class="lane-tag">Lane 1</p>
+          <h3>Annotation</h3>
+        </div>
+        <div class="team-grid">
+          <article class="team-card" id="team-birdofpray" style="--lane-color:var(--terracotta);">
+            <h4>BirdOfPray</h4>
+            <ul class="badges"><li class="badge silver">Second place overall</li><li class="badge best">Best in lane</li></ul>
+            <p class="team-members">Olha Vakulenko, Kseniia Buzko, Michael Pintur, Evangelia Bisketzi</p>
+            <div class="team-links"><a href="https://github.com/evabisketzi/evidencejam2026-birdOfPray">Code on GitHub</a></div>
+          </article>
+          <article class="team-card" id="team-d" style="--lane-color:var(--terracotta);">
+            <h4>d</h4>
+            <ul class="badges"><li class="badge green">Sustainability prize</li></ul>
+            <p class="team-members">An Ping Yang, Emma Li, Omar Masri, Douglas Gee</p>
+            <div class="team-links"><a href="https://github.com/dgee08/evidencejam2026-lane1">Code on GitHub</a></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="lane-group">
+        <div class="lane-group-head" style="--lane-color:var(--slate);">
+          <p class="lane-tag">Lane 2</p>
+          <h3>Reasoning</h3>
+        </div>
+        <div class="team-grid">
+          <article class="team-card" id="team-causa-nostra" style="--lane-color:var(--slate);">
+            <h4>Causa Nostra</h4>
+            <ul class="badges"><li class="badge best">Best in lane</li></ul>
+            <p class="team-members">Andrii Kramarenko, Antonina Rudakova <span class="member-award">GB10 winner</span>, Panos Vlachos, Mojtaba Valipour</p>
+            <div class="team-links"><a href="https://github.com/mojivalipour/evidencejam2026-lane2/tree/dev">Code on GitHub</a></div>
+          </article>
+          <article class="team-card" id="team-geo" style="--lane-color:var(--slate);">
+            <h4>Team Geo</h4>
+            <ul class="badges"><li class="badge green">Sustainability prize</li></ul>
+            <p class="team-members">Maahir Sheikh, Shady Roufail, Nafisat Ibrahim, Bernard Kim</p>
+            <div class="team-links"><a href="https://github.com/bernardkim0805-cmyk/geo-fork-">Code on GitHub</a></div>
+          </article>
+          <article class="team-card" id="team-goose-chain" style="--lane-color:var(--slate);">
+            <h4>Goose Chain</h4>
+            <ul class="badges"><li class="badge">Honourable mention</li></ul>
+            <p class="team-members">Henry Wang, Justin Chung, Oliver Zang, Jordan Lin</p>
+            <div class="team-links"><a href="https://github.com/justin13888/evidencejam">Code on GitHub</a></div>
+          </article>
+          <article class="team-card" id="team-yc-startup" style="--lane-color:var(--slate);">
+            <h4>YC Startup</h4>
+            <ul class="badges"><li class="badge">Honourable mention</li></ul>
+            <p class="team-members">Aurora Martinez, Shivani Saravanan, Abisha Bhandari, Mihika Padwal</p>
+            <div class="team-links"><a href="https://github.com/aurora-martinez/evidencejam2026-lane2">Code on GitHub</a></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="lane-group">
+        <div class="lane-group-head" style="--lane-color:var(--plum);--lane-text:var(--plum);">
+          <p class="lane-tag">Lane 3</p>
+          <h3>Interface</h3>
+        </div>
+        <div class="team-grid">
+          <article class="team-card" id="team-whimsy" style="--lane-color:var(--plum);">
+            <h4>Whimsy</h4>
+            <ul class="badges"><li class="badge gold">First place overall</li><li class="badge best">Best in lane</li></ul>
+            <p class="team-members">Winnie Chen, Valavan Marakathalingasivam, Kaitlyn Chan, Brian Huang</p>
+            <div class="team-links"><a href="https://judging.racoonresearch.ca/whimsy/index.html">Visit the website</a><a href="https://github.com/winnie-c8/evidencejam2026-whimsy">Code on GitHub</a></div>
+          </article>
+          <article class="team-card" id="team-random-team" style="--lane-color:var(--plum);">
+            <h4>Random Team</h4>
+            <ul class="badges"><li class="badge">Honourable mention</li></ul>
+            <p class="team-members">Cong Liu, Brandon Zhou, Tianyu Shi, Arda Bulut</p>
+            <div class="team-links"><a href="https://judging.racoonresearch.ca/Random_Team/index.html">Visit Understory</a><a href="https://github.com/brandonzhou2002/understory">Code on GitHub</a></div>
+          </article>
+          <article class="team-card" id="team-runningoutoftime" style="--lane-color:var(--plum);">
+            <h4>RunningOutOfTime</h4>
+            <ul class="badges"><li class="badge green">Sustainability prize</li></ul>
+            <p class="team-members">Tyler Ah Von, Han Zhou, Aggam Grewal, Victoria Milardovic</p>
+            <div class="team-links"><a href="https://judging.racoonresearch.ca/RunningOutOfTime/index.html">Visit the website</a><a href="https://github.com/Han-Zhou/evidencejam2026-lane3">Code on GitHub</a></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIDEOS ============ -->
+  <section id="videos" class="dark">
+    <div class="wrap">
+      <p class="eyebrow">Videos</p>
+      <h2>Watch the weekend</h2>
+      <p class="measure" style="opacity:0.85;">The Friday introduction to the challenge, and every team's final presentation followed by the award ceremony.</p>
+      <div class="video-grid">
+        <figure class="video">
+          <div class="video-frame"><iframe id="kmsembed-1_d2h3oxwl" width="640" height="360" src="https://mediaspace.carleton.ca/embed/secure/iframe/entryId/1_d2h3oxwl/uiConfId/44424421/st/0" class="kmsembed" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" referrerPolicy="no-referrer-when-downgrade" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" loading="lazy" title="Evidence Jam 2026: Causapalooza! Introduction"></iframe></div>
+          <figcaption>Introduction</figcaption>
+        </figure>
+        <figure class="video">
+          <div class="video-frame"><iframe id="kmsembed-1_5ou84yy8" width="640" height="360" src="https://mediaspace.carleton.ca/embed/secure/iframe/entryId/1_5ou84yy8/uiConfId/44424421/st/0" class="kmsembed" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" referrerPolicy="no-referrer-when-downgrade" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" loading="lazy" title="Evidence Jam 2026: Causapalooza! Presentations and Awards"></iframe></div>
+          <figcaption>Presentations and awards</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section id="gallery">
+    <div class="wrap">
+      <p class="eyebrow">Photos</p>
+      <h2>Scenes from the weekend</h2>
+      <p class="measure">From the Nibi tour on Friday to the trophies on Monday. Select a photo to see it larger.</p>
+      <ul class="gallery">
+        <li class="tall"><button type="button" data-full="assets/gallery/nibi.jpg"><img src="assets/gallery/nibi-thumb.jpg" width="600" height="800" loading="lazy" alt="Server racks of the Nibi supercomputer, labelled AMD, Nibi, SHARCNET and Hypertec."><span class="cap">Touring Nibi, UW's supercomputer</span></button></li>
+        <li><button type="button" data-full="assets/gallery/cathal.jpg"><img src="assets/gallery/cathal-thumb.jpg" width="800" height="600" loading="lazy" alt="Participants seated around long tables in the book-lined DRAGEN Lab while a speaker stands at the front."><span class="cap">Kicking off in the DRAGEN Lab</span></button></li>
+        <li><button type="button" data-full="assets/gallery/pic1.jpg"><img src="assets/gallery/pic1-thumb.jpg" width="800" height="497" loading="lazy" alt="Four participants lean in around their laptops at a shared table."><span class="cap">Heads down on a build</span></button></li>
+        <li><button type="button" data-full="assets/gallery/working_2.jpg"><img src="assets/gallery/working_2-thumb.jpg" width="800" height="490" loading="lazy" alt="Two participants watch a laptop screen closely, one with a hand at her chin."><span class="cap">Checking the output</span></button></li>
+        <li><button type="button" data-full="assets/gallery/working_3.jpg"><img src="assets/gallery/working_3-thumb.jpg" width="800" height="580" loading="lazy" alt="Participants write a diagram on a whiteboard wall while a teammate looks on."><span class="cap">Mapping an approach on the whiteboard</span></button></li>
+        <li><button type="button" data-full="assets/gallery/working.jpg"><img src="assets/gallery/working-thumb.jpg" width="800" height="600" loading="lazy" alt="A breakout room with whiteboard walls covered in notes and a team working at a table."><span class="cap">Whiteboards filled up fast</span></button></li>
+        <li><button type="button" data-full="assets/gallery/working_4.jpg"><img src="assets/gallery/working_4-thumb.jpg" width="800" height="545" loading="lazy" alt="A group gathered around workstations; one participant points and grins at the camera."><span class="cap">Talking it through</span></button></li>
+        <li><button type="button" data-full="assets/gallery/presenting_1.jpg"><img src="assets/gallery/presenting_1-thumb.jpg" width="800" height="511" loading="lazy" alt="A presenter gestures at a large screen showing the Understory website, titled 'What does the evidence say?'"><span class="cap">Random Team presents Understory</span></button></li>
+        <li><button type="button" data-full="assets/gallery/presenting_2.jpg"><img src="assets/gallery/presenting_2-thumb.jpg" width="800" height="458" loading="lazy" alt="A speaker addresses the room in front of a screen streaming the session to remote viewers."><span class="cap">Presentations, in the room and online</span></button></li>
+        <li class="pano"><button type="button" data-full="assets/gallery/trophies.jpg"><img src="assets/gallery/trophies-thumb.jpg" width="800" height="584" loading="lazy" alt="Five low-poly trophies on wooden bases: two green geese and gold, red and grey raccoons."><span class="cap">The trophies, waiting for their winners</span></button></li>
+        <li><button type="button" data-full="assets/gallery/trophies_gold.jpg"><img src="assets/gallery/trophies_gold-thumb.jpg" width="800" height="566" loading="lazy" alt="Close-up of a gold low-poly raccoon trophy on a wooden base."><span class="cap">The Golden Raccoon</span></button></li>
+        <li><button type="button" data-full="assets/gallery/whimsy_gold.jpg"><img src="assets/gallery/whimsy_gold-thumb.jpg" width="800" height="579" loading="lazy" alt="Team Whimsy holds the gold raccoon trophy and a boxed Dell monitor beside a whiteboard reading 'Causapalooza Day 4: The Finale'."><span class="cap">Whimsy with their first-place trophy</span></button></li>
+        <li><button type="button" data-full="assets/gallery/green_goose_d.jpg"><img src="assets/gallery/green_goose_d-thumb.jpg" width="800" height="641" loading="lazy" alt="Four members of team d smile and hold a green goose trophy together."><span class="cap">Team d with their sustainability trophy</span></button></li>
+      </ul>
+    </div>
+  </section>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <figure class="lb-figure">
+      <img id="lb-img" src="" alt="">
+      <figcaption><span id="lb-cap"></span><span class="lb-count" id="lb-count"></span></figcaption>
+    </figure>
+    <button type="button" class="lb-btn lb-prev" id="lb-prev" aria-label="Previous photo">&#8249;</button>
+    <button type="button" class="lb-btn lb-next" id="lb-next" aria-label="Next photo">&#8250;</button>
+    <button type="button" class="lb-btn lb-close" id="lb-close" aria-label="Close">&times;</button>
+  </dialog>
+
+  <!-- ============ THANKS ============ -->
+  <section id="thanks" class="dark">
+    <div class="wrap">
+      <p class="eyebrow">Thank you</p>
+      <h2>It took a lab to run this</h2>
+      <div class="thanks-grid">
+        <div>
+          <p>Evidence Jam was supported by the <a href="https://www.dragenlab.ca/">DRAGEN Lab</a> at St. Jerome's University and by Dell, who contributed more than $10,000 in prizes. Thank you to St. Jerome's University for its continued support of our learners and community partners.</p>
+          <p>Dr. Tim Alamenciak, the DRAGEN Lab's postdoctoral fellow, organized this first Evidence Jam. Mentors from UW's School of Environment, Resources and Sustainability (SERS) and from the World Wildlife Fund, Conservation Halton, NVIDIA, Dougan Consulting and Aicology worked alongside the teams all weekend.</p>
+        </div>
+        <div>
+          <h3>DRAGEN Lab team</h3>
+          <p>Shannon Drew (Assistant Director and Project Manager), Amelia Dreyer (undergraduate research assistant) and Kian Drew (Indigenous Research Fellow and Maker Space Manager) worked with Tim as a core organizing team for the event.</p>
+          <p>Graduate research fellows Gillian Wagenaar, Etienne Chevalier and Erin Kurian gave expert help to every team, and Gillian was our official event photographer. The Lab's other undergraduate Hatchlings — Sophia, Theo, Riley and Natalie — offered multi-day support, while also juggling Fall Open House.</p>
+        </div>
+      </div>
+      <div class="supporters">
+        <a href="https://www.dell.com/en-ca" aria-label="Dell">
+          <img class="logo-dell" src="assets/logos/dell-reversed.svg" alt="Dell" width="60" height="60">
+        </a>
+        <a href="https://www.sju.ca" aria-label="St. Jerome's University">
+          <img class="logo-sju" src="assets/logos/sju.png" alt="St. Jerome's University" width="247" height="54">
+        </a>
+        <a href="https://www.nvidia.com" aria-label="NVIDIA">
+          <img src="assets/logos/nvidia-reversed.svg" alt="NVIDIA" width="117" height="35">
+        </a>
+        <a href="https://ecoweaver.hi-knowledge.org" aria-label="EcoWeaver">
+          <img src="assets/logos/ecoweaver-reversed.svg" alt="EcoWeaver" width="201" height="29">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARCHIVE: THE CHALLENGE ============ -->
+  <div class="archive-intro alt">
+    <div class="wrap">
+      <p class="eyebrow">About the challenge</p>
+      <p>The original brief, as teams received it.</p>
+    </div>
+  </div>
+
+  <!-- ============ LANES ============ -->
+  <section id="lanes" class="alt" style="padding-top:2rem;">
+    <div class="wrap">
+      <h2>One challenge, three lanes</h2>
+      <div class="lane-note measure">
+        Evidence Jam ran as a single competition. Teams picked the lane that fit their skills, and every project, in every lane, was judged on the same scale.
+      </div>
+
+      <div class="lanes-grid">
+        <div class="lane-card" style="--lane-color:var(--terracotta);--lane-text:var(--terracotta-ink);">
+          <p class="lane-tag">Lane 1</p>
+          <h3>Turn papers into a causal graph</h3>
+          <p>Given a corpus of restoration ecology articles, extract their causal claims into CAMO. How much of the schema's richness you capture — and how you get there — is your call.</p>
+          <dl>
+            <dt>Teams got</dt>
+            <dd>The corpus, the schema, a few hand-annotated examples.</dd>
+            <dt>Rigor was measured by</dt>
+            <dd>Schema-valid output, checked against papers teams hadn't seen.</dd>
+          </dl>
+        </div>
+
+        <div class="lane-card" style="--lane-color:var(--slate);">
+          <p class="lane-tag">Lane 2</p>
+          <h3>Reason over the claims</h3>
+          <p>Build something that lets a restoration practitioner ask a question and get a trustworthy, evidence-grounded answer — without inventing anything the evidence doesn't say.</p>
+          <dl>
+            <dt>Teams got</dt>
+            <dd>A curated set of CAMO-structured causal claims, the schema.</dd>
+            <dt>Rigor was measured by</dt>
+            <dd>Accuracy on a held-out question set, honest confidence, graceful "I don't know."</dd>
+          </dl>
+        </div>
+
+        <div class="lane-card" style="--lane-color:var(--plum);--lane-text:var(--plum);">
+          <p class="lane-tag">Lane 3</p>
+          <h3>Help a practitioner decide</h3>
+          <p>Build an interface that helps someone planning a restoration make a call from this evidence: will it work, how sure are we, can it be undone, does it fit my site.</p>
+          <dl>
+            <dt>Teams got</dt>
+            <dd>CAMO-structured evidence, existing wireframes — use them or don't.</dd>
+            <dt>Rigor was measured by</dt>
+            <dd>A real practitioner walking through the interface with a live decision.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="rubric-callout">
+        <h3>Every lane, one rubric</h3>
+        <p style="margin:0;opacity:0.9;">Whichever lane a team picked, its project was scored on the same five criteria.</p>
+        <div class="rubric-tags">
+          <span>Rigor &amp; CAMO fidelity</span>
+          <span>Technical execution</span>
+          <span>Practitioner impact</span>
+          <span>Innovation</span>
+          <span>Presentation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAMO ============ -->
+  <section id="camo">
+    <div class="wrap">
+      <div class="camo-grid">
+        <div>
+          <h2>What is the Causal Mosaic Schema?</h2>
+          <p>The <a href="https://github.com/timalamenciak/causalmosaic"><strong>Causal Mosaic Schema (CAMO)</strong></a> is a data schema written in <a href="https://linkml.io/">LinkML</a> — a fill-in-the-blanks form for documenting causal claims. If a researcher says "X causes Y," CAMO gives you a way to document exactly how, and how confident the researcher is that it's causal rather than merely correlational.</p>
+          <p>It was developed together with philosophers of causality, including Dr. Phyllis Illari, who <a href="https://archive.org/details/causalityphiloso0000illa">wrote the book on causality</a>. Every team's starter repo included the schema, a worked example, a half-page primer and a ready-to-go environment.</p>
+          <p>Lane 1 extracted causal claims into CAMO. Lane 2 reasoned over CAMO-structured claims. Lane 3 helped practitioners act on them. Same schema throughout — which is what made it worth collaborating across lanes.</p>
+        </div>
+        <figure class="cg-card">
           <p class="cg-title">One CAMO edge, annotated</p>
 
           <div class="cg-node" style="--cg-c:var(--coral);">
@@ -399,179 +769,8 @@
             <span>Moderate certainty</span>
           </div>
 
-          <figcaption class="cg-caption">A real edge from the Causal Mosaic Schema, annotated from <a href="https://doi.org/10.3897/neobiota.39.23398">Lommen et al. 2018</a>. Solid boxes are CAMO nodes; dashed boxes are the mediation pathway the edge records. This is what every lane works with.</figcaption>
+          <figcaption class="cg-caption">A real edge from the Causal Mosaic Schema, annotated from <a href="https://doi.org/10.3897/neobiota.39.23398">Lommen et al. 2018</a>. Solid boxes are CAMO nodes; dashed boxes are the mediation pathway the edge records. This is what every lane worked with.</figcaption>
         </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section id="about">
-    <div class="wrap">
-      <h2>Ecology needs answers faster than a literature review can give them</h2>
-      <p class="measure">What's the best way to manage invasive buckthorn? How does species reintroduction change an ecosystem? What actually improves restoration resilience? Answering these properly can take years of literature synthesis. We're going to try it in a weekend.</p>
-      <p class="measure">Six teams get real ecological data, fully-stocked GitHub repos, and roving mentors to break logjams. We have the <a href="https://uwaterloo.ca/research/meet-nibi">Nibi supercomputer</a> and GPU desktops on site for running local models. And food — good food, all weekend.</p>
-
-      <div class="about-lists">
-        <div>
-          <h3>Who it's for</h3>
-          <ul class="plain">
-            <li>Software developers &amp; ML engineers</li>
-            <li>Restoration &amp; conservation ecologists</li>
-            <li>UX/UI designers</li>
-            <li>Data scientists &amp; knowledge engineers</li>
-            <li>Philosophers of science</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Team size</h3>
-          <p>Six teams of <strong>2–4 people</strong>. Participants applied as groups or solo, with solo applicants matched to teams. Interdisciplinary teams are strongly encouraged and prioritized in selection.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ LANES ============ -->
-  <section id="lanes" class="alt">
-    <div class="wrap">
-      <h2>One challenge, three lanes</h2>
-      <div class="lane-note measure">
-        Evidence Jam runs as a single competition this year. Pick the lane that fits your team's skills — every project, in every lane, is judged on the same scale for the same prizes.
-      </div>
-
-      <div class="lanes-grid">
-        <div class="lane-card" style="--lane-color:var(--terracotta);--lane-text:var(--terracotta-ink);">
-          <p class="lane-tag">Lane 1</p>
-          <h3>Turn papers into a causal graph</h3>
-          <p>Given a corpus of restoration ecology articles, extract their causal claims into CAMO. How much of the schema's richness you capture — and how you get there — is your call.</p>
-          <dl>
-            <dt>You get</dt>
-            <dd>The corpus, the schema, a few hand-annotated examples.</dd>
-            <dt>Rigor is measured by</dt>
-            <dd>Schema-valid output, checked against papers you haven't seen.</dd>
-          </dl>
-        </div>
-
-        <div class="lane-card" style="--lane-color:var(--slate);">
-          <p class="lane-tag">Lane 2</p>
-          <h3>Reason over the claims</h3>
-          <p>Build something that lets a restoration practitioner ask a question and get a trustworthy, evidence-grounded answer — without inventing anything the evidence doesn't say.</p>
-          <dl>
-            <dt>You get</dt>
-            <dd>A curated set of CAMO-structured causal claims, the schema.</dd>
-            <dt>Rigor is measured by</dt>
-            <dd>Accuracy on a held-out question set, honest confidence, graceful "I don't know."</dd>
-          </dl>
-        </div>
-
-        <div class="lane-card" style="--lane-color:var(--plum);--lane-text:var(--plum);">
-          <p class="lane-tag">Lane 3</p>
-          <h3>Help a practitioner decide</h3>
-          <p>Build an interface that helps someone planning a restoration make a call from this evidence: will it work, how sure are we, can it be undone, does it fit my site.</p>
-          <dl>
-            <dt>You get</dt>
-            <dd>CAMO-structured evidence, existing wireframes — use them or don't.</dd>
-            <dt>Rigor is measured by</dt>
-            <dd>A real practitioner walking through your interface with a live decision.</dd>
-          </dl>
-        </div>
-      </div>
-
-      <div class="rubric-callout">
-        <h3>Every lane, one rubric</h3>
-        <p style="margin:0;opacity:0.9;">Whichever lane you pick, your project is scored on the same five criteria. The strongest overall projects win prizes.</p>
-        <div class="rubric-tags">
-          <span>Rigor &amp; CAMO fidelity</span>
-          <span>Technical execution</span>
-          <span>Practitioner impact</span>
-          <span>Innovation</span>
-          <span>Presentation</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CAMO ============ -->
-  <section id="camo">
-    <div class="wrap">
-      <div class="camo-grid">
-        <div>
-          <h2>What is the Causal Mosaic Schema?</h2>
-          <p>The <a href="https://github.com/timalamenciak/causalmosaic"><strong>Causal Mosaic Schema (CAMO)</strong></a> is a data schema written in <a href="https://linkml.io/">LinkML</a> — a fill-in-the-blanks form for documenting causal claims. If a researcher says "X causes Y," CAMO gives you a way to document exactly how, and how confident the researcher is that it's causal rather than merely correlational.</p>
-          <p>It was developed together with philosophers of causality, including Dr. Phyllis Illari, who <a href="https://archive.org/details/causalityphiloso0000illa">wrote the book on causality</a>. Every team gets a half-page primer and a worked example as part of their starter repo.</p>
-          <p>Lane 1 extracts causal claims into CAMO. Lane 2 reasons over CAMO-structured claims. Lane 3 helps practitioners act on them. Same schema throughout — which is what makes it worth collaborating across lanes.</p>
-        </div>
-        <div class="camo-box">
-          <h3>Every repo includes</h3>
-          <ul class="plain">
-            <li>The CAMO schema</li>
-            <li>One worked example</li>
-            <li>A half-page primer</li>
-            <li>Environment setup, ready to go</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ AWARDS ============ -->
-  <section id="awards" class="dark">
-    <div class="wrap">
-      <h2>Awards and prizes</h2>
-      <p class="measure" style="opacity:0.85;">One grand prize by random draw, two on merit, and one voted by the room.</p>
-
-      <div style="margin-top:2rem;">
-        <div class="award-row">
-          <div class="award-icon">💻</div>
-          <div>
-            <p class="award-meta">Grand prize &middot; random draw, every participant, equal odds</p>
-            <h3>Dell Pro Max with GB10</h3>
-            <p style="margin:0;opacity:0.9;">FCM1253 &middot; 20-core NVIDIA GB10 Grace CPU, Blackwell GPU, 128&nbsp;GB LPDDR5X, 4&nbsp;TB SSD. One name drawn at random from every participant &mdash; not just team leads or winning teams. Everyone who takes part has the same chance to win, regardless of how their project scores.</p>
-          </div>
-        </div>
-
-        <div class="award-row">
-          <div class="award-icon">🦝</div>
-          <div>
-            <p class="award-meta">First &amp; second place</p>
-            <h3>Gold Raccoon</h3>
-            <p style="margin:0;opacity:0.9;">One shared competition, one set of prizes. Every lane is scored on the same rubric, and the two strongest projects overall take home Dell hardware &mdash; not the strongest project in each category.</p>
-            <ol class="prize-list">
-              <li>
-                <span class="prize-rank">1<sup>st</sup></span>
-                <span>
-                  <span class="prize-name"><a href="https://www.dell.com/en-ca/shop/dell-pro-p-24-usb-c-hub-monitor-p2426he/apd/210-bvsp/monitors-monitor-accessories">Dell Pro P24 USB-C Hub Monitor</a></span>
-                  <span class="prize-spec">P2426HE &middot; 23.8&Prime; FHD, 120&nbsp;Hz, USB-C hub</span>
-                </span>
-              </li>
-              <li>
-                <span class="prize-rank">2<sup>nd</sup></span>
-                <span>
-                  <span class="prize-name"><a href="https://www.dell.com/en-ca/shop/dell-pro-plus-earbuds-eb525/apd/520-bbnf/audio">Dell Pro Plus Earbuds</a></span>
-                  <span class="prize-spec">EB525 &middot; adaptive ANC, 33&nbsp;h with case</span>
-                </span>
-              </li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="award-row">
-          <div class="award-icon">🌿</div>
-          <div>
-            <p class="award-meta">Most sustainable use of AI · funding in progress</p>
-            <h3>Green Raccoon</h3>
-            <p style="margin:0;opacity:0.9;">Goes to the team combining a genuinely strong project with the smallest measured footprint — local compute and hosted model API calls both count. Only projects that clear the same quality bar as the main competition are eligible; being efficient alone isn't enough to win. We're seeking dedicated funding for this prize now — details to follow.</p>
-          </div>
-        </div>
-
-        <div class="award-row">
-          <div class="award-icon">⭐</div>
-          <div>
-            <p class="award-meta">Best collaborator · voted by all participants</p>
-            <h3>Most Valuable Possum</h3>
-            <p style="margin:0;opacity:0.9;">Goes to whoever most enriched the weekend — helping other teams, sharing their work generously, and unsticking someone else's logjam.</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -580,7 +779,7 @@
   <section id="schedule" class="alt">
     <div class="wrap">
       <h2>Schedule</h2>
-      <p class="measure">The DRAGEN Lab is open 9 a.m.–6 p.m. Saturday and Sunday. Four Nibi supercomputer checkpoints and two cross-team check-ins keep momentum going across the weekend.</p>
+      <p class="measure">The DRAGEN Lab was open 9 a.m.–6 p.m. Saturday and Sunday, with four Nibi supercomputer checkpoints and two cross-team check-ins across the weekend.</p>
 
       <div class="timeline" style="margin-top:2.5rem;">
         <div class="day-block">
@@ -602,7 +801,7 @@
           <div class="item"><span class="time">9:00 am</span><span>Work rooms open · Nibi checkpoint 3</span></div>
           <div class="item"><span class="time">12:00 pm</span><span>Lunch + cross-team check-in 2</span></div>
           <div class="item"><span class="time">1:00 pm</span><span>Work rooms open · Nibi checkpoint 4</span></div>
-          <div class="item"><span class="time">6:00 pm</span><span>End of day</span></div>
+          <div class="item"><span class="time">6:00 pm</span><span>Solutions due</span></div>
         </div>
         <div class="day-block">
           <h3>Monday, November 16</h3>
@@ -618,53 +817,16 @@
       <div class="space-grid">
         <div>
           <h2>The space</h2>
-          <p>Evidence Jam takes place in the <a href="https://www.dragenlab.ca/">DRAGEN Lab</a> at St. Jerome's University — 3,600 ft² of purpose-built collaborative research space inside the newly renovated library, with a Makerspace offering 3D scanning, 3D printing, and high-performance computing.</p>
+          <p>Evidence Jam took place in the <a href="https://www.dragenlab.ca/">DRAGEN Lab</a> at St. Jerome's University — 3,600 ft² of purpose-built collaborative research space inside the newly renovated library, with a Makerspace offering 3D scanning, 3D printing, and high-performance computing.</p>
           <ul class="plain" style="margin-top:1.2rem;">
             <li>Collaborative team work areas</li>
             <li>GPU workstations for local model inference</li>
             <li>Makerspace with HPC units &amp; fabrication tools</li>
-            <li>Strong campus WiFi throughout</li>
           </ul>
-          <p style="margin-top:1.2rem;">Breakfast and lunch are provided Saturday and Sunday, coffee from 9 a.m. each morning. We're seeking funding for an evening social — if it happens, we'll announce it. Dietary requirements are accommodated.</p>
-          <p style="font-size:0.9rem;opacity:0.75;">290 Westmount Road North, Waterloo, ON — a short walk from campus, accessible via ION light rail. <a href="https://www.sju.ca">sju.ca</a> · <a href="https://www.dragenlab.ca">dragenlab.ca</a></p>
+          <p style="font-size:0.9rem;opacity:0.75;margin-top:1.2rem;">290 Westmount Road North, Waterloo, ON. <a href="https://www.sju.ca">sju.ca</a> · <a href="https://www.dragenlab.ca">dragenlab.ca</a></p>
         </div>
         <div class="space-photo">
-          <img src="https://images.squarespace-cdn.com/content/v1/5f9c33ba967c666a7d67aed0/46f24db1-383e-4a0b-95c4-311a5b44a812/7c1ce6f1-1d2a-4efe-be29-e2817e0a0ecb.jpeg" alt="DRAGEN Lab Makerspace, St. Jerome's University">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SUPPORTED BY ============ -->
-  <section id="supported" class="dark">
-    <div class="wrap">
-      <h2>Supported by</h2>
-      <div class="supporters">
-        <a href="https://www.nvidia.com" aria-label="NVIDIA">
-          <img src="assets/logos/nvidia-reversed.svg" alt="NVIDIA" width="117" height="35">
-        </a>
-        <a href="https://www.dell.com/en-ca" aria-label="Dell">
-          <img class="logo-dell" src="assets/logos/dell-reversed.svg" alt="Dell" width="60" height="60">
-        </a>
-        <a href="https://www.sju.ca" aria-label="St. Jerome's University">
-          <img class="logo-sju" src="assets/logos/sju.png" alt="St. Jerome's University" width="247" height="54">
-        </a>
-        <a href="https://ecoweaver.hi-knowledge.org" aria-label="EcoWeaver">
-          <img src="assets/logos/ecoweaver-reversed.svg" alt="EcoWeaver" width="201" height="29">
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ APPLY ============ -->
-  <section id="apply">
-    <div class="wrap">
-      <div class="apply-box">
-        <h2>See you in November!</h2>
-        <p class="deadline">Applications are now closed</p>
-        <p class="measure" style="opacity:0.9;">Thank you to everyone who applied to Evidence Jam 2026. Applications closed on Friday, October 9, 2026, and we're now reviewing submissions. Selected teams will be contacted and asked to complete a short Team Charter before the event.</p>
-        <div class="btn-pair">
-          <a class="btn btn-primary" href="#schedule">See the schedule</a>
+          <img src="https://images.squarespace-cdn.com/content/v1/5f9c33ba967c666a7d67aed0/46f24db1-383e-4a0b-95c4-311a5b44a812/7c1ce6f1-1d2a-4efe-be29-e2817e0a0ecb.jpeg" alt="DRAGEN Lab Makerspace, St. Jerome's University" loading="lazy">
         </div>
       </div>
     </div>
@@ -676,26 +838,26 @@
   <div class="footer-grid">
     <div>
       <h4>Evidence Jam 2026</h4>
-      <p style="margin:0 0 1rem;opacity:0.85;">An AI causal synthesis hackathon<br>University of Waterloo</p>
+      <p style="margin:0 0 1rem;opacity:0.85;">An AI causal synthesis hackathon<br>St. Jerome's University, Waterloo · November 13–16, 2026</p>
       <p style="margin:0;opacity:0.85;"><a href="mailto:Tim.A@uwaterloo.ca">Tim.A@uwaterloo.ca</a></p>
-      <p style="margin-top:1.2rem;opacity:0.7;font-size:0.88rem;">Looking for sponsors to support prizes, food, and infrastructure — including dedicated funding for the Green Raccoon sustainability prize. Especially interested in API credits, hardware, cash prizes, and software subscriptions.</p>
+      <p style="margin-top:1.2rem;opacity:0.7;font-size:0.88rem;">Solutions will be shared openly in a forthcoming workshop report in <em>Research Ideas &amp; Outcomes</em>.</p>
     </div>
     <div>
       <h4>Organized by</h4>
       <p style="opacity:0.85;"><a href="https://timalamenciak.github.io/">Tim Alamenciak</a><br>Carleton University &amp; University of Waterloo</p>
       <h4 style="margin-top:1.6rem;">Links</h4>
       <p style="opacity:0.85;margin:0;">
-        <a href="https://timalamenciak.github.io/">timalamenciak.github.io</a><br>
-        <a href="https://ecoweaver.hi-knowledge.org">EcoWeaver</a><br>
-        <a href="https://timalamenciak.github.io/rosettaR">rosettaR</a>
+        <a href="https://mediaspace.carleton.ca/media/Evidence%20Jam%202026%3A%20Causapalooza!%20Presentations%20and%20Awards/1_5ou84yy8">Presentations &amp; awards video</a><br>
+        <a href="https://github.com/timalamenciak/causalmosaic">Causal Mosaic Schema</a><br>
+        <a href="https://ecoweaver.hi-knowledge.org">EcoWeaver</a>
       </p>
     </div>
     <div>
       <h4>Support</h4>
       <p style="opacity:0.85;margin:0;">
-        <a href="https://www.nvidia.com">NVIDIA</a> — supporter<br>
-        <a href="https://www.dell.com/en-ca">Dell</a> — hardware prizes<br>
+        <a href="https://www.dell.com/en-ca">Dell</a> — $10,000+ in prizes<br>
         <a href="https://www.sju.ca">St. Jerome's University</a> — venue, DRAGEN Lab<br>
+        <a href="https://www.nvidia.com">NVIDIA</a> — mentors<br>
         <a href="https://ecoweaver.hi-knowledge.org">EcoWeaver Knowledge Framework</a> — knowledge systems
       </p>
     </div>
@@ -704,6 +866,44 @@
     Evidence Jam 2026 — built on the Causal Mosaic Schema (CAMO) and the EcoWeaver Knowledge Framework.
   </div>
 </footer>
+
+<script>
+(function(){
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.gallery button'));
+  var dlg = document.getElementById('lightbox');
+  if (!dlg || !buttons.length || typeof dlg.showModal !== 'function') {
+    // No <dialog> support: fall back to opening the full image directly.
+    buttons.forEach(function(b){ b.addEventListener('click', function(){ window.open(b.dataset.full, '_blank'); }); });
+    return;
+  }
+  var img = document.getElementById('lb-img');
+  var cap = document.getElementById('lb-cap');
+  var count = document.getElementById('lb-count');
+  var current = 0, opener = null;
+
+  function show(i){
+    current = (i + buttons.length) % buttons.length;
+    var b = buttons[current];
+    var thumb = b.querySelector('img');
+    img.src = b.dataset.full;
+    img.alt = thumb.alt;
+    cap.textContent = b.querySelector('.cap').textContent;
+    count.textContent = (current + 1) + ' / ' + buttons.length;
+  }
+  buttons.forEach(function(b, i){
+    b.addEventListener('click', function(){ opener = b; show(i); dlg.showModal(); });
+  });
+  document.getElementById('lb-prev').addEventListener('click', function(){ show(current - 1); });
+  document.getElementById('lb-next').addEventListener('click', function(){ show(current + 1); });
+  document.getElementById('lb-close').addEventListener('click', function(){ dlg.close(); });
+  dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(current + 1); }
+  });
+  dlg.addEventListener('close', function(){ img.src = ''; if (opener) opener.focus(); });
+})();
+</script>
 
 </body>
 </html>
