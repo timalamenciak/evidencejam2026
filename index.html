@@ -181,7 +181,15 @@
   }
   .badge.gold{background:var(--gold);border-color:var(--gold);color:#3b3210;}
   .badge.silver{background:#cfd3d1;border-color:#b9bfbc;color:#2c3330;}
-  .badge.best{background:var(--ink);border-color:var(--ink);color:var(--paper-text);}
+  .badges{align-items:center;}
+  .badge.best{
+    font-size:0.88rem;font-weight:700;
+    padding:0.35em 0.95em;
+    background:var(--ink);border:2px solid var(--gold);color:var(--gold);
+    letter-spacing:0.02em;
+    box-shadow:0 2px 8px rgba(39,55,50,0.25);
+  }
+  .badge.best::before{content:"\2605\00a0";}
   .badge.green{background:var(--sage);border-color:var(--sage);color:var(--sage-ink);}
   .member-award{
     display:inline-block;font-size:0.74rem;font-weight:600;
@@ -353,6 +361,7 @@
     padding:1.8rem 2rem;
   }
   .rubric-callout h3{color:var(--paper-text);}
+  .rubric-callout a{color:var(--sage);}
   .rubric-tags{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:1rem;font-size:0.88rem;}
   .rubric-tags span{
     border:1px solid var(--line-dark);
@@ -492,7 +501,7 @@
     <div class="wrap">
       <p class="eyebrow">Teams and awards</p>
       <h2>Nine teams, all open source</h2>
-      <p class="measure">Every lane was judged on the same rubric. Each lane had a best-in-lane winner and a sustainability prize for the effective solution with the lowest carbon footprint, and the judges also named an overall first place and runner-up. One participant was drawn at random to win a Dell GB10 desktop supercomputer.</p>
+      <p class="measure">Each lane had its own judges and its own judging criteria, suited to the kind of work it asked for. Each lane named a best-in-lane winner and a sustainability prize for the effective solution with the lowest carbon footprint. The overall first place and runner-up went to the two teams with the most total points. One participant was drawn at random to win a Dell GB10 desktop supercomputer.</p>
       <p class="measure">Every team's code is public on GitHub. Lane 3 teams built websites, which are linked below.</p>
 
       <div class="lane-group">
@@ -503,7 +512,7 @@
         <div class="team-grid">
           <article class="team-card" id="team-birdofpray" style="--lane-color:var(--terracotta);">
             <h4>BirdOfPray</h4>
-            <ul class="badges"><li class="badge silver">Second place overall</li><li class="badge best">Best in lane</li></ul>
+            <ul class="badges"><li class="badge best">Best in lane</li><li class="badge silver">Second place overall</li></ul>
             <p class="team-members">Olha Vakulenko, Kseniia Buzko, Michael Pintur, Evangelia Bisketzi</p>
             <div class="team-links"><a href="https://github.com/evabisketzi/evidencejam2026-birdOfPray">Code on GitHub</a></div>
           </article>
@@ -557,7 +566,7 @@
         <div class="team-grid">
           <article class="team-card" id="team-whimsy" style="--lane-color:var(--plum);">
             <h4>Whimsy</h4>
-            <ul class="badges"><li class="badge gold">First place overall</li><li class="badge best">Best in lane</li></ul>
+            <ul class="badges"><li class="badge best">Best in lane</li><li class="badge gold">First place overall</li></ul>
             <p class="team-members">Winnie Chen, Valavan Marakathalingasivam, Kaitlyn Chan, Brian Huang</p>
             <div class="team-links"><a href="https://judging.racoonresearch.ca/whimsy/index.html">Visit the website</a><a href="https://github.com/winnie-c8/evidencejam2026-whimsy">Code on GitHub</a></div>
           </article>
@@ -677,7 +686,7 @@
     <div class="wrap">
       <h2>One challenge, three lanes</h2>
       <div class="lane-note measure">
-        Evidence Jam ran as a single competition. Teams picked the lane that fit their skills, and every project, in every lane, was judged on the same scale.
+        Teams picked the lane that fit their skills. Each lane had its own judges and its own criteria, matched to the work it asked for.
       </div>
 
       <div class="lanes-grid">
@@ -719,15 +728,8 @@
       </div>
 
       <div class="rubric-callout">
-        <h3>Every lane, one rubric</h3>
-        <p style="margin:0;opacity:0.9;">Whichever lane a team picked, its project was scored on the same five criteria.</p>
-        <div class="rubric-tags">
-          <span>Rigor &amp; CAMO fidelity</span>
-          <span>Technical execution</span>
-          <span>Practitioner impact</span>
-          <span>Innovation</span>
-          <span>Presentation</span>
-        </div>
+        <h3>How judging worked</h3>
+        <p style="margin:0;opacity:0.9;">Each lane's judges scored its projects against that lane's criteria and named a best-in-lane winner and a sustainability prize. The overall first place and runner-up went to the two teams with the most total points. <a href="#teams">See the teams and awards</a>.</p>
       </div>
     </div>
   </section>
